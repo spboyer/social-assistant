@@ -1,0 +1,21 @@
+name: social-assistant
+metadata:
+    template: social-assistant:0.1
+services:
+    web:
+        project: .
+        language: js
+        host: staticwebapp
+        dist: dist
+        hooks:
+            predeploy:
+                windows:
+                    shell: pwsh
+                    run: npm run build
+                posix:
+                    shell: sh
+                    run: npm run build
+    api:
+        project: ./api
+        language: js
+        host: function
