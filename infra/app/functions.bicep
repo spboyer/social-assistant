@@ -16,7 +16,7 @@ module functionApp '../core/host/functions.bicep' = {
   params: {
     location: location
     alwaysOn: false
-    tags: union(tags, { 'azd-service-name': 'functionapp' })
+    tags: union(tags, { 'azd-service-name': 'api' })
     kind: 'functionapp'
     keyVaultName: keyVaultName
     appServicePlanId: hostingPlanId
